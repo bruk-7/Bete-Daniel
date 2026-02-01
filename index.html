@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bete Daniel | Luxury Boutique Hotel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+            --cream: #f9f7f2;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+        }
+
+        .logo { color: var(--white); font-size: 24px; font-weight: 700; letter-spacing: 2px; }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 { font-size: clamp(40px, 8vw, 80px); margin-bottom: 20px; }
+        .hero-content p { font-size: 18px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px; opacity: 0.9; }
+
+        .btn-luxury {
+            padding: 15px 40px;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-luxury:hover { background: var(--white); color: var(--dark); }
+
+        /* Rooms Section */
+        .section { padding: 100px 10%; background: var(--cream); }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 45px; color: var(--dark); }
+        
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .room-card {
+            background: var(--white);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .room-card:hover { transform: translateY(-10px); }
+
+        .room-img {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .room-info { padding: 30px; text-align: center; }
+        .room-info h3 { font-size: 28px; margin-bottom: 10px; }
+        .room-info p { color: #666; margin-bottom: 20px; font-size: 14px; }
+        .room-price { font-size: 20px; color: var(--gold); font-weight: 700; margin-bottom: 20px; }
+
+        /* Footer */
+        footer { background: var(--dark); color: var(--white); padding: 50px 10%; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BETE DANIEL</div>
+        <div class="nav-links">
+            <a href="#">Rooms</a>
+            <a href="#">Spa</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p>Experience Bahir Dar</p>
+            <h1>Refined Luxury</h1>
+            <a href="#rooms" class="btn-luxury">Discover Our Suites</a>
+        </div>
+    </header>
+
+    <section class="section" id="rooms">
+        <div class="section-header">
+            <h2>Our Accommodations</h2>
+        </div>
+
+        <div class="room-grid">
+            <div class="room-card">
+                <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800');"></div>
+                <div class="room-info">
+                    <h3>Presidential Suite</h3>
+                    <p>Panoramic views of Lake Tana with private terrace and premium spa bath.</p>
+                    <div class="room-price">4,500 ETB / Night</div>
+                    <a href="#" class="btn-luxury" style="padding: 10px 20px;">Book Now</a>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800');"></div>
+                <div class="room-info">
+                    <h3>Deluxe Double</h3>
+                    <p>Exquisite design meets comfort. High-speed Wi-Fi and breakfast included.</p>
+                    <div class="room-price">3,200 ETB / Night</div>
+                    <a href="#" class="btn-luxury" style="padding: 10px 20px;">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Bete Daniel Hotel & Spa. Addis Ababa, Ethiopia.</p>
+    </footer>
+
+</body>
+</html>
