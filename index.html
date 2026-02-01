@@ -3,72 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bete Daniel Hotel | Luxury in Bahir Dar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Bete Daniel Hotel | Luxury Boutique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #b38e44;
-            --dark-blue: #0a192f;
-            --white: #ffffff;
-            --bg-cream: #f4f1ea;
-        }
-
+        :root { --gold: #c5a059; --dark: #0f172a; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--white); color: #333; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; letter-spacing: 1px; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--dark); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
 
-        /* Navigation */
-        nav {
-            padding: 25px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 25, 47, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        .logo { color: var(--gold); font-size: 26px; font-weight: 700; letter-spacing: 3px; font-family: 'Cormorant Garamond', serif; }
-        .nav-links a { color: var(--white); text-decoration: none; margin-left: 35px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
-
-        /* Hero with Real Image Background */
+        /* HERO IMAGE */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000'); /* Luxury Hotel Pool/Exterior */
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
         }
-        .hero-content h1 { font-size: clamp(50px, 10vw, 90px); margin-bottom: 20px; color: var(--gold); }
-        .hero-content p { font-size: 16px; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 40px; }
+
+        /* ROOM GRID */
+        .room-section { padding: 80px 10%; background: #fdfcf8; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         
-        /* Premium Button */
-        .btn-luxury {
-            padding: 18px 50px;
-            background: var(--gold);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 3px;
-            border: 1px solid var(--gold);
-            transition: 0.4s;
-        }
-        .btn-luxury:hover { background: transparent; color: var(--gold); }
+        .room-card { background: white; border: 1px solid #eee; transition: 0.3s; }
+        .room-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        .img-box { height: 250px; background-size: cover; background-position: center; }
 
-        /* Room Grid Section */
-        .section { padding: 120px 8%; background: var(--bg-cream); }
-        .section-tag { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-size: 12px; display: block; text-align: center; margin-bottom: 15px; }
-        .section-title { font-size: 50px; text-align: center; margin-bottom: 70px; color: var(--dark-blue); }
+        /* SPECIFIC ROOM IMAGES */
+        .img-double { background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1000'); }
+        .img-single { background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=1000'); }
+        .img-family { background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1000'); }
 
-        .room-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .room-card { background: var(--white); box-shadow: 0 20px 50px rgba(0,0,0,0.05); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .room-card:hover { transform: translateY(-15px); }
-        .room-img { height: 350px;
+        .info { padding: 25px; text-align: center; }
+        .price { color: var(--gold); font-weight: bold; font-size: 20px; margin: 10px 0; }
+        .btn { display: inline-block; padding: 10px 25px; background: var(--gold); color: white; text-decoration: none; font-size: 12px; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div>
+            <h1 style="font-size: 70px;">Bete Daniel Hotel</h1>
+            <p style="letter-spacing: 5px; text-transform: uppercase;">Bahir Dar • Ethiopia</p>
+        </div>
+    </section>
+
+    <section class="room-section">
+        <h2 style="text-align: center; font-size: 40px;">Our Accommodations</h2>
+        <div class="grid">
+            
+            <div class="room-card">
+                <div class="img-box img-double"></div>
+                <div class="info">
+                    <h3>Double Room</h3>
+                    <p>Lake views, Air conditioning, and private terrace.</p>
+                    <div class="price">Check Rates</div>
+                    <a href="#" class="btn">BOOK NOW</a>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="img-box img-single"></div>
+                <div class="info">
+                    <h3>Single Room</h3>
+                    <p>Perfect for solo travelers. Includes tea & coffee maker.</p>
+                    <div class="price">Check Rates</div>
+                    <a href="#" class="btn">BOOK NOW</a>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <div class="img-box img-family"></div>
+                <div class="info">
+                    <h3>Family Suite</h3>
+                    <p>Spacious rooms with 3 beds and personal steam room.</p>
+                    <div class="price">Check Rates</div>
+                    <a href="#" class="btn">BOOK NOW</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
